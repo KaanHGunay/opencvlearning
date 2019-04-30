@@ -12,6 +12,7 @@ int sayac = 0;
 int main() {
 	Mat orgIm = imread("lena.jpg");
 	
+	// Gauss fonksiyonuna tek deðer girilememektedir!
 	while (true) {
 		GaussianBlur(orgIm, dst, Size(sayac + 1, sayac + 1), 1); // 1 Standart sapma deðeridir.
 		

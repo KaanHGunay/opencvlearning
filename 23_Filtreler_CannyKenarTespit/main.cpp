@@ -8,11 +8,11 @@ using namespace cv;
 
 int main() {
 	Mat orgIm = imread("lena.jpg");
-	Mat destIm;
+	cvtColor(orgIm, orgIm, COLOR_BGR2GRAY);
+	// 100 - 150 -> Piksel deðerlerinin türevi alýnýrkenken kenarý elde etmek için kullanýlan türev iþleminin eþik aralýðýný belirtir.
+	Canny(orgIm, orgIm, 100, 150); 
+	imshow("Image", orgIm);
 
-	bilateralFilter(orgIm, destIm, 15, 100, 100);
-	imshow("OrgImage", orgIm);
-	imshow("DestImage", destIm);
 	waitKey(0);
 	return 0;
 }
